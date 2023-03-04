@@ -1,0 +1,68 @@
+body{
+    background-image: url("../img/inicio.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    padding-top: 350px;
+  }
+  
+  label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 250px;
+    margin-bottom: 20px;
+  }
+  
+  button[type="button"] {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #008080;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: #d7aa08;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button[type="submit"]:hover {
+    background-color: #f7aa1a;
+  }
+  button[type="button"]:hover {
+    background-color: #006666;
+  }
+  
+  .resultados {
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  p {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
