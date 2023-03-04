@@ -6,13 +6,32 @@
     <link rel="stylesheet" href="css/juego.css">
 </head>
 <body>
+    <div id="canvasContainer">
+        <p><canvas id="canvas" width="1300" height="600" style="border: 1px solid black;">Tu navegador no soporta canvas</canvas></p>
+        <img src="img/aguila.png" alt="aaa" width="300" height="300" hidden id="img_aguila">
+        <img src="img/bufalo.png" alt="aaa" width="300" height="300" hidden id="img_bufalo">
+        <img src="img/vaca.png" alt="aaa" width="300" height="300" hidden id="img_vaca">
+        <img src="img/elefante.png" alt="aaa" width="300" height="300" hidden id="img_elefante">
+        <img src="img/leon.png" alt="aaa" width="300" height="300" hidden id="img_leon">
+        <img src="img/oso.png" alt="aaa" width="300" height="300" hidden id="img_oso">
+        <img src="img/fondoZoo.jpg" alt="aaa" hidden id="bg">
 
-    <div id="juego">
-        <div id="animal"></div>
+        <div class="divInside" id="divUno" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="divInside" id="divDos" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="divInside" id="divTres" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="divInside" id="divCuatro" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="divInside" id="divCinco" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="divInside" id="divSeis" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+         
+    </div>
+   
+
+    <div style="display: flex; justify-content: center;">
+        <img id="aguilaNombre" src="img/aguila_nombre.png" draggable="true" style="border: 2px solid black" ondragstart="drag(event)" width="150" height="40">
     </div>
 
-
-    <!-- Script JS que se encarga de la interacción y funcionalidad del juego -->
-    <script src="js/juego.js"></script>
+     <!-- Script JS que se encarga de la interacción y funcionalidad del juego -->
+     <script src="js/juego.js"></script>
 </body>
 </html>
