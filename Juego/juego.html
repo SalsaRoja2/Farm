@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <title>Correspondencia de Animales</title>
     <link rel="stylesheet" href="css/juego.css">
+    <script src="js/juego.js" defer></script>
 </head>
 <body>
     
     
     <div id="canvasContainer">
-        <p><canvas id="canvas" width="1300" height="600">Tu navegador no soporta canvas</canvas></p>
-        <img src="img/pruega.png" alt="aaa" width="300" height="300" hidden id="img_aguila">
+        <p><canvas id="canvas" width="1300" height="580">Tu navegador no soporta canvas</canvas></p>
+        <img src="img/aguila.png" alt="aaa" width="300" height="300" hidden id="img_aguila">
         <img src="img/bufalo.png" alt="aaa" width="300" height="300" hidden id="img_bufalo">
         <img src="img/vaca.png" alt="aaa" width="300" height="300" hidden id="img_vaca">
         <img src="img/elefante.png" alt="aaa" width="300" height="300" hidden id="img_elefante">
@@ -27,9 +28,8 @@
 
          
     </div>
-   
 
-    <div style="display: flex; justify-content: center;">
+    <div style="display: flex; justify-content: center;min-height: 50px;">
         <img id="imgUno" src="img/aguila_nombre.png" draggable="true" class="imgName" ondragstart="drag(event)" width="150" height="40">
         <img id="imgDos" src="img/oso_nombre.png" draggable="true" class="imgName" ondragstart="drag(event)" width="150" height="40">
         <img id="imgTres" src="img/aguila_nombre.png" draggable="true" class="imgName" ondragstart="drag(event)" width="150" height="40">
@@ -37,14 +37,48 @@
         <img id="imgCinco" src="img/elefante_nombre.png" draggable="true" class="imgName" ondragstart="drag(event)" width="150" height="40">
         <img id="imgSeis" src="img/bufalo_nombre.png" draggable="true" class="imgName" ondragstart="drag(event)" width="150" height="40">
     </div>
-    
-    <div style=" left:0;">
-        <p style="color:white;font-size:20px;font-family: Arial, Helvetica, sans-serif;margin-top: -10px;margin-bottom: -.5px;">Música:</p>
-
-            <input type="checkbox" id="musica" checked>
+    <div style="display:flex"  id="bgSwitch">
+        <div style=" left:0;">
+            <p style="color:rgb(0, 0, 0);font-size:20px;font-family: Arial, Helvetica, sans-serif;margin-top: -10px;margin-bottom: -.5px;">Música:</p>
+            <label class="switch">
+                <input type="checkbox" checked id="musica">
+                <span class="slider"></span>
+              </label>
+        </div>
+        <div style="margin-left: 20px;">
+            <button class="button">Salir</button>
+        </div>
     </div>
-    <audio src="sound/musica.mp3" type="audio/mpeg" autoplay loop id="audio"></audio>
-     <!-- Script JS que se encarga de la interacción y funcionalidad del juego -->
-     <script src="js/juego.js"></script>
+    
+
+    <audio src="sound/musica.mp3" type="audio/mpeg" loop id="audio" preload="auto"></audio>
+    <script>
+        document.getElementById("audio").volume = .5;
+    </script>
+    
+    
+    <script>
+        var checkbox = document.getElementById('musica');
+        var audio = document.getElementById('audio');
+        Musica();
+        checkbox.addEventListener('change', (event) => {
+            if (event.currentTarget.checked) {
+                audio.play();
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+            });
+        
+        function Musica(){
+            if(checkbox.checked){
+                audio.play();
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        }
+    </script>
+
 </body>
 </html>
