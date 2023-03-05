@@ -6,9 +6,11 @@
     <link rel="stylesheet" href="css/juego.css">
 </head>
 <body>
+    
+    
     <div id="canvasContainer">
-        <p><canvas id="canvas" width="1300" height="600" style="border: 1px solid black;">Tu navegador no soporta canvas</canvas></p>
-        <img src="img/aguila.png" alt="aaa" width="300" height="300" hidden id="img_aguila">
+        <p><canvas id="canvas" width="1300" height="600">Tu navegador no soporta canvas</canvas></p>
+        <img src="img/pruega.png" alt="aaa" width="300" height="300" hidden id="img_aguila">
         <img src="img/bufalo.png" alt="aaa" width="300" height="300" hidden id="img_bufalo">
         <img src="img/vaca.png" alt="aaa" width="300" height="300" hidden id="img_vaca">
         <img src="img/elefante.png" alt="aaa" width="300" height="300" hidden id="img_elefante">
@@ -28,9 +30,25 @@
    
 
     <div style="display: flex; justify-content: center;">
-        <img id="aguilaNombre" src="img/aguila_nombre.png" draggable="true" style="border: 2px solid black" ondragstart="drag(event)" width="150" height="40">
+        <img id="imgUno" src="img/aguila_nombre.png" draggable="true" class="imgName" ondragstart="drag(event)" width="150" height="40">
+        <img id="imgDos" src="img/oso_nombre.png" draggable="true" class="imgName" ondragstart="drag(event)" width="150" height="40">
+        <img id="imgTres" src="img/aguila_nombre.png" draggable="true" class="imgName" ondragstart="drag(event)" width="150" height="40">
+        <img id="imgCuatro" src="img/leon_nombre.png" draggable="true" class="imgName" ondragstart="drag(event)" width="150" height="40">
+        <img id="imgCinco" src="img/elefante_nombre.png" draggable="true" class="imgName" ondragstart="drag(event)" width="150" height="40">
+        <img id="imgSeis" src="img/bufalo_nombre.png" draggable="true" class="imgName" ondragstart="drag(event)" width="150" height="40">
     </div>
+    
+    <div style=" left:0;">
+        <p style="color:white;font-size:20px;font-family: Arial, Helvetica, sans-serif;margin-top: -10px;margin-bottom: -.5px;">Música:</p>
 
+        <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+        </label>
+        
+        
+    </div>
+    
      <!-- Script JS que se encarga de la interacción y funcionalidad del juego -->
      <script src="js/juego.js"></script>
 </body>
