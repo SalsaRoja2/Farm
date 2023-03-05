@@ -6,13 +6,14 @@
     <script src="js/inicio.js"></script>
   </head>
   <body>
+    <audio autoplay src="sound/musica.mp3" type="audio/mpeg"></audio>
     <form class="formulario" onsubmit="event.preventDefault(); almacenarDatos();">
-      <label for="alias">Ingresa tu alias:</label>
+      <label for="alias" style="font-family: cursive; font-size: 30px;">Ingresa tu alias:</label>
       <div class="input-group">
-        <input type="text" id="alias" name="alias" required>
+        <input type="text" id="alias" name="alias" required >
         <button type="submit">✓</button>
       </div>
-      <button type="button">Comenzar</button>
+      <a href="../Juego/juego.html"><button type="button">Comenzar</button></a>
     </form>
     <div class="resultados">
       <p id="Alias"></p>
