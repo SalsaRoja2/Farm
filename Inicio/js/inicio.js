@@ -1,6 +1,7 @@
 var indice=-1;
 var jugadores=localStorage.getItem("jugadores");
 jugadores=JSON.parse(jugadores);
+var x;
 if(jugadores==null) jugadores=[];
  function almacenarDatos() {
     var alias=document.getElementById("alias").value;
@@ -15,10 +16,11 @@ if(jugadores==null) jugadores=[];
     jugadores.push(jugador);
     localStorage.setItem("jugadores",JSON.stringify(jugadores));
   }else{
+    var jugador=JSON.parse(jugadores[x]);
     document.getElementById("puntos").textContent = 
-      "Puntos: " + puntos; 
+      "Puntos: " + jugador.puntos; 
     document.getElementById("mejorTiempo").textContent = 
-      "Mejor tiempo: " + mejorTiempo; 
+      "Mejor tiempo: " + jugador.mejorTiempo; 
   }
     
 
@@ -26,8 +28,10 @@ if(jugadores==null) jugadores=[];
   }
 //comit inicial probando
 function jugadorExiste(alias) {
-  for (let jugador of Object.values(jugadores)) {
+  for (let i in jugadores) {
+     jugador= JSON.parse(jugadores[i])
     if (jugador.alias === alias) {
+      x=i;
       return true;
     }
   }
