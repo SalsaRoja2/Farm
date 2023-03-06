@@ -9,6 +9,7 @@
 <body>
     
     
+
     <div id="canvasContainer">
         <p><canvas id="canvas" width="1300" height="580">Tu navegador no soporta canvas</canvas></p>
         <img src="img/aguila.png" alt="aaa" width="300" height="300" hidden id="img_aguila">
@@ -26,18 +27,18 @@
         <div class="divInside" id="divCinco" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
         <div class="divInside" id="divSeis" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-         
+        
     </div>
 
     <div style="display: flex; justify-content: center;min-height: 50px;">
-        <img id="imgUno" src="img/aguila_nombre.png" draggable="true" class="imgName" ondragstart="drag(event)" width="150" height="40">
-        <img id="imgDos" src="img/oso_nombre.png" draggable="true" class="imgName" ondragstart="drag(event)" width="150" height="40">
-        <img id="imgTres" src="img/vaca_nombre.png" draggable="true" class="imgName" ondragstart="drag(event)" width="150" height="40">
-        <img id="imgCuatro" src="img/leon_nombre.png" draggable="true" class="imgName" ondragstart="drag(event)" width="150" height="40">
-        <img id="imgCinco" src="img/elefante_nombre.png" draggable="true" class="imgName" ondragstart="drag(event)" width="150" height="40">
-        <img id="imgSeis" src="img/bufalo_nombre.png" draggable="true" class="imgName" ondragstart="drag(event)" width="150" height="40">
+        <img name ="aguila" id="imgUno" src="img/aguila_nombre.png" draggable="true" class="imgName" ondragstart="drag(event)" width="150" height="40">
+        <img name ="oso" id="imgDos" src="img/oso_nombre.png" draggable="true" class="imgName" ondragstart="drag(event)" width="150" height="40">
+        <img name ="vaca" id="imgTres" src="img/vaca_nombre.png" draggable="true" class="imgName" ondragstart="drag(event)" width="150" height="40">
+        <img name ="leon" id="imgCuatro" src="img/leon_nombre.png" draggable="true" class="imgName" ondragstart="drag(event)" width="150" height="40">
+        <img name ="elefante" id="imgCinco" src="img/elefante_nombre.png" draggable="true" class="imgName" ondragstart="drag(event)" width="150" height="40">
+        <img name ="bufalo" id="imgSeis" src="img/bufalo_nombre.png" draggable="true" class="imgName" ondragstart="drag(event)" width="150" height="40">
     </div>
-    <div style="display:flex"  id="bgSwitch">
+    <div style="display:flex"  class="bgSwitch">
         <div style=" left:0;">
             <p style="color:rgb(0, 0, 0);font-size:20px;font-family: Arial, Helvetica, sans-serif;margin-top: -10px;margin-bottom: -.5px;">Música:</p>
             <label class="switch">
@@ -50,6 +51,10 @@
         </div>
     </div>
     
+    <div class="bgSwitch" id="divHUD">
+        <p id = "puntuacion"> PUNTUACIÓN: </p>
+        <p id = "tiempo"> TIEMPO: </p>
+    </div>
 
     <audio src="sound/musica.mp3" type="audio/mpeg" loop id="audio" preload="auto"></audio>
     <script>

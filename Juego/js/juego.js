@@ -40,6 +40,7 @@ window.addEventListener("load", (event) => {
   }
   asignarAnimales();
   agregarImagenes();
+  updateScore();
   });
 
 function asignarAnimales(){
@@ -72,20 +73,37 @@ function allowDrop(ev) {
 }
 
 function drag(ev) {
-  ev.dataTransfer.setData("Text/html", ev.target.id);
+  ev.dataTransfer.setData("text", ev.target.id);
 }
 
-function drop(ev, target) {
+function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
-  alert(document.getElementById(data).getAttribute("id") + " | " + ev.target.getAttribute("id"));
-  if(target.getAttribute("name") == ev.target.getAttribute("name")){
+  //alert(data + " | " + returnAnimal(data) + " | " + ev.target.getAttribute("name"));
+  if(document.getElementById(data).getAttribute("name") === ev.target.getAttribute("name")){
     puntos+=100;
+    alert(puntos);
+    updateScore();
     ev.target.appendChild(document.getElementById(data));
-    alert(puntos + " | " + target.getAttribute("id") + " | " + ev.target.getAttribute("id"));
+    //alert(puntos + " | " + target.getAttribute("id") + " | " + ev.target.getAttribute("id"));
   } else {
     puntos-=10;
-    alert(puntos + " | " + target.getAttribute("id") + " | " + ev.target.getAttribute("id"));
+    updateScore();
+    alert(puntos);
+    //alert(puntos + " | " + target.getAttribute("id") + " | " + ev.target.getAttribute("id"));
   }
-  
+  updateScore();
+}
+
+function returnAnimal(texto){
+  for(let i=0; i<6; i++){
+    if(texto.toLowerCase().includes(animales[i])){
+      return animales[i];
+    } 
+  }
+  return "error";
+}
+
+function updateScore(){
+  document.getElementById("puntuacion").innerText = "PUNTOS: " + puntos;
 }
