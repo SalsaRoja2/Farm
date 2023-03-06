@@ -152,14 +152,16 @@ var jugadores=localStorage.getItem("jugadores");
 jugadores=JSON.parse(jugadores);
 var x;
 var alias=localStorage.getItem("jugador");
+var tiempo=localStorage.getItem("tiempo");
   var jugador;
   for(let i in jugadores){
-    jugador=JSON.parse(jugadores[i])
+    jugador=JSON.parse(jugadores[i]);
     if(jugador.alias===alias){
       x=i;
       jugador.puntos+=puntos;
       if(jugador.mejorTiempo<tiempo)
       jugador.mejorTiempo=tiempo;
+      jugador=JSON.stringify(jugador);
       jugadores[x]=jugador;
       localStorage.setItem("jugadores",JSON.stringify(jugadores));
       break;

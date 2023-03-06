@@ -5,23 +5,16 @@ function ResetTime(){
 function StarTime(){
 
     seconds= 0;
-    s= document.getElementById("segundos");
-    m= document.getElementById("minutos");
+   
     cronometro = setInterval(function(){
     seconds++;
     secs= seconds;
-    mins=0;
     while ( secs>=60){
-        mins++;
         secs-=60;
         }
-        if(min<10)m.innerHTML = "0"+ mins;
-        else  m.innerHTML = mins;
-        if(secs<10)m.innerHTML = "0"+ secs;
-        s.innerHTML = secs;
-        Total_mins=mins;
+        document.getElementById("segundos").textContent = secs;
         Total_secs=secs;
-        
+        localStorage.setItem("tiempo",Total_secs);
         
         
     },1000)
