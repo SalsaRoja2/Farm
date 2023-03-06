@@ -63,7 +63,12 @@ body{
     font-family: cursive; 
     
   }
-  
+  button[class="records"] {
+    background-color: #ffc96b;
+  }
+  button[class="records"]:hover {
+    background-color: #7a530f;
+  }
   p {
     font-size: 18px;
     font-weight: bold;

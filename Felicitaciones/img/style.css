@@ -71,7 +71,7 @@ p {
     content: '';
     width: 30px; height: 30px;
     border-radius: 100%;
-    border: 6px solid #00FFCB;
+    border: 6px solid #ffd500;
     position: absolute;
     z-index: -1;
     top: 50%;
@@ -101,4 +101,8 @@ p {
   .salir{
     background: #d14f4f;
     background: linear-gradient(90deg, rgb(255, 0, 0) 0%, rgb(244, 138, 67) 100%);
+  }
+  .creditos{
+    background: #cb10df;
+    background: linear-gradient(90deg, rgb(252, 7, 211) 0%, rgb(143, 14, 158) 100%);
   }
