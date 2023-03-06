@@ -1,7 +1,6 @@
 
-var alias= localStorage.getItem("alias");
-var parseData = JSON.parse(alias);
-var nombre= parseData.alias;
+var jugador= localStorage.getItem("jugador");
+var nombre= jugador;
 document.getElementById("alias").textContent= nombre;
 
 function mostrarCreditos() {

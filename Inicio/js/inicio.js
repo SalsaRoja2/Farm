@@ -5,7 +5,7 @@ var x;
 if(jugadores==null) jugadores=[];
  function almacenarDatos() {
     var alias=document.getElementById("alias").value;
-    
+    localStorage.setItem("jugador",alias);
     if(!jugadorExiste(alias)){
     var jugador= JSON.stringify({
       alias:alias,
