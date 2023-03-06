@@ -1,7 +1,21 @@
 var jugadores=localStorage.getItem("jugadores");
 jugadores=JSON.parse(jugadores);
+var aux;
 var aLength = jugadores.length;
-            
+    /*for(let i in jugadores){
+        for(let j in jugadores){
+            var jugador= JSON.parse(jugadores[j]);
+            var jugador2=JSON.parse(jugadores[j+1]);
+            if(jugador.mejorTiempo<=jugador2.mejorTiempo){
+                aux=jugador;
+                jugador=jugador2;
+            }
+        }
+    }*/
+    jugadores.sort((y, x)=> x.mejorTiempo - y.mejorTiempo);
+    console.log(jugadores);
+    jugadores.sort((x, y)=> x.mejorTiempo - y.mejorTiempo);
+    console.log(jugadores);
     document.getElementById("listado").innerHTML="";
     document.getElementById("total").innerHTML="";
             

@@ -159,8 +159,10 @@ var tiempo=localStorage.getItem("tiempo");
     if(jugador.alias===alias){
       x=i;
       jugador.puntos+=puntos;
-      if(jugador.mejorTiempo<tiempo)
-      jugador.mejorTiempo=tiempo;
+      if(jugador.mejorTiempo>tiempo||jugador.mejorTiempo===0){
+        jugador.mejorTiempo=tiempo;
+        console.log(jugador.mejortiempo);
+      }
       jugador=JSON.stringify(jugador);
       jugadores[x]=jugador;
       localStorage.setItem("jugadores",JSON.stringify(jugadores));
