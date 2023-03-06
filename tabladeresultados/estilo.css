@@ -38,3 +38,6 @@ button[type="button"] {
   button[type="button"]:hover {
     background-color: #006666;
   }
+  body{
+    font-family: cursive;
+  }
