@@ -139,3 +139,21 @@ function playCorrectSounds(xxx){
       break;
   }
 }
+
+function subirdatos(){
+var jugadores=localStorage.getItem("jugadores");
+jugadores=JSON.parse(jugadores);
+var x;
+var alias=localStorage.getItem("jugador");
+  var jugador;
+  for(let i in jugadores){
+    jugador=JSON.parse(jugadores[i])
+    if(jugador.alias===alias){
+      x=i;
+      jugador.puntos+=puntos;
+      if(jugador.mejorTiempo<tiempo)
+      jugador.mejorTiempo=tiempo;
+      break;
+    }
+  }
+}
