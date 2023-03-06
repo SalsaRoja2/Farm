@@ -82,14 +82,12 @@ function drop(ev) {
   //alert(data + " | " + returnAnimal(data) + " | " + ev.target.getAttribute("name"));
   if(document.getElementById(data).getAttribute("name") === ev.target.getAttribute("name")){
     puntos+=100;
-    alert(puntos);
     updateScore();
     ev.target.appendChild(document.getElementById(data));
     //alert(puntos + " | " + target.getAttribute("id") + " | " + ev.target.getAttribute("id"));
   } else {
     puntos-=10;
     updateScore();
-    alert(puntos);
     //alert(puntos + " | " + target.getAttribute("id") + " | " + ev.target.getAttribute("id"));
   }
   updateScore();
