@@ -1,16 +1,18 @@
 const contenedor = document.getElementById("animal");
 var animales= ["aguila","bufalo","vaca","elefante","leon","oso"];
 var shuffled = [];
-//var imagenes = [
-//  document.getElementById('img_aguila'),
-//  document.getElementById('img_bufalo'),
-//  document.getElementById('img_vaca'),
-//  document.getElementById('img_elefante'),
-//  document.getElementById('img_leon'),
-//  document.getElementById('img_oso')
-//];
+var audios = [
+  document.getElementById('audio_aguila'),
+  document.getElementById('audio_bufalo'),
+  document.getElementById('audio_vaca'),
+  document.getElementById('audio_elefante'),
+  document.getElementById('audio_leon'),
+  document.getElementById('audio_oso'),
+  document.getElementById('audio_correcto'),
+  document.getElementById('audio_incorrecto')
+];
 
-var puntos = 100;
+var puntos = 0;
 
 var dropArea = [
   document.getElementById('divUno'),
@@ -83,10 +85,18 @@ function drop(ev) {
   if(document.getElementById(data).getAttribute("name") === ev.target.getAttribute("name")){
     puntos+=100;
     updateScore();
+    audios[6].play();
+    setTimeout(function(){playCorrectSounds(ev.target.getAttribute("name"))}, 1000);
     ev.target.appendChild(document.getElementById(data));
     //alert(puntos + " | " + target.getAttribute("id") + " | " + ev.target.getAttribute("id"));
   } else {
-    puntos-=10;
+    if(puntos>=0){
+      puntos-=10;
+      if(puntos<0){
+        puntos = 0;
+      }
+    }
+    audios[7].play();
     updateScore();
     //alert(puntos + " | " + target.getAttribute("id") + " | " + ev.target.getAttribute("id"));
   }
@@ -104,4 +114,28 @@ function returnAnimal(texto){
 
 function updateScore(){
   document.getElementById("puntuacion").innerText = "PUNTOS: " + puntos;
+}
+
+//var animales= ["aguila","bufalo","vaca","elefante","leon","oso"];
+function playCorrectSounds(xxx){
+  switch(xxx){
+    case 'aguila':
+      audios[0].play();
+      break;
+    case 'bufalo':
+      audios[1].play();
+      break;
+    case 'vaca':
+      audios[2].play();
+      break; 
+    case 'elefante':
+      audios[3].play();
+      break;
+    case 'leon':
+      audios[4].play();
+      break;
+    case 'oso':
+      audios[5].play();
+      break;
+  }
 }
