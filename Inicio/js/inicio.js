@@ -29,7 +29,7 @@ if(jugadores==null) jugadores=[];
 //comit inicial probando
 function jugadorExiste(alias) {
   for (let i in jugadores) {
-     jugador= JSON.parse(jugadores[i])
+     jugador= JSON.parse(jugadores[i]);
     if (jugador.alias === alias) {
       x=i;
       return true;
