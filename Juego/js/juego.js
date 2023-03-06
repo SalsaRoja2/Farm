@@ -1,6 +1,7 @@
 const contenedor = document.getElementById("animal");
 var animales= ["aguila","bufalo","vaca","elefante","leon","oso"];
 var shuffled = [];
+var fin=0;
 var audios = [
   document.getElementById('audio_aguila'),
   document.getElementById('audio_bufalo'),
@@ -88,6 +89,12 @@ function drop(ev) {
     audios[6].play();
     setTimeout(function(){playCorrectSounds(ev.target.getAttribute("name"))}, 1000);
     ev.target.appendChild(document.getElementById(data));
+    //checar si termino el juego
+    fin++;
+    if(fin===6){
+      subirdatos();
+      window.location.href="../Felicitaciones/img/felicidades.html";
+    }
     //alert(puntos + " | " + target.getAttribute("id") + " | " + ev.target.getAttribute("id"));
   } else {
     if(puntos>=0){
@@ -153,6 +160,8 @@ var alias=localStorage.getItem("jugador");
       jugador.puntos+=puntos;
       if(jugador.mejorTiempo<tiempo)
       jugador.mejorTiempo=tiempo;
+      jugadores[x]=jugador;
+      localStorage.setItem("jugadores",JSON.stringify(jugadores));
       break;
     }
   }
